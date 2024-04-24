@@ -83,7 +83,7 @@ def main():
     cfg.merge_from_list(args.opts)
     
     # Step 3: set device
-    device = "cuda" if torch.cuda.is_available() else "cpu"
+    device = "cuda" if torch.cuda.is_available() else "cuda"
     cfg.MODEL.DEVICE = device
 
     # Step 4: define model
@@ -109,7 +109,7 @@ def main():
                     md,
                     scale=1.0,
                     instance_mode=ColorMode.SEGMENTATION)
-    result = v.draw_instance_predictions(output.to("cpu"))
+    result = v.draw_instance_predictions(output.to("cuda"))
     result_image = result.get_image()[:, :, ::-1]
 
     # step 6: save

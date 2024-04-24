@@ -116,7 +116,7 @@ def main():
 
 def load_model_weight(net, pretrained_model_file):
     print("Loading ckpt from:", pretrained_model_file)
-    pretrained_model_state_dict = torch.load(pretrained_model_file, map_location="cpu")
+    pretrained_model_state_dict = torch.load(pretrained_model_file, map_location="cuda")
     if "state_dict" in pretrained_model_state_dict.keys():
         pretrained_model_state_dict = pretrained_model_state_dict["state_dict"]
     new_state_dict = {}

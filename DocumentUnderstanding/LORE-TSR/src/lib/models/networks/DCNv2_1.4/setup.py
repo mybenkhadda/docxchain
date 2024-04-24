@@ -20,7 +20,7 @@ def get_extensions():
     extensions_dir = os.path.join(this_dir, "src")
 
     main_file = glob.glob(os.path.join(extensions_dir, "*.cpp"))
-    source_cpu = glob.glob(os.path.join(extensions_dir, "cpu", "*.cpp"))
+    source_cpu = glob.glob(os.path.join(extensions_dir, "cuda", "*.cpp"))
     source_cuda = glob.glob(os.path.join(extensions_dir, "cuda", "*.cu"))
     
     os.environ["CC"] = "g++"

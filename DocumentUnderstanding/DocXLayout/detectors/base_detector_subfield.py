@@ -27,7 +27,7 @@ class BaseDetector(object):
 
         self.model = create_model(opt.arch, opt.heads, opt.head_conv, opt.convert_onnx, {})
         self.model = load_model(self.model, opt.load_model)
-        self.model = self.model.to("cpu")
+        self.model = self.model.to("cuda")
         self.model.eval()
 
         self.mean = np.array(opt.mean, dtype=np.float32).reshape(1, 1, 3)
@@ -161,7 +161,7 @@ class BaseDetector(object):
             # images = np.load('data.npy').astype(np.float32)
             # images = torch.from_numpy(images)
             
-            images = images.to("cpu")
+            images = images.to("cuda")
             # torch.cuda.synchronize()
             pre_process_time = time.time()
             pre_time += pre_process_time - scale_start_time
