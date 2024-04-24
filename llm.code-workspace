@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "llm",
+			"path": "."
+		},
+		{
+			"name": "pipelines",
+			"path": "../AdvancedLiterateMachinery/Applications/DocXChain/pipelines"
+		},
+		{
+			"name": "utilities",
+			"path": "../AdvancedLiterateMachinery/Applications/DocXChain/utilities"
+		}
+	],
+	"settings": {}
+}
