@@ -236,4 +236,4 @@ class DocxChain_PO():
             page = int(tables.iloc[i]["page"])
             img = images[page]
             img = img[int(region[1])-30:int(region[-1])+30, :,:]
-            plt.imsave(f"tables/table-{random.randint(0,100)}-page{tables.iloc[i]['page']}.jpg", img)
+            plt.imsave(f"tables/table-{random.randint(0,100)}-page{page}.jpg", img)
