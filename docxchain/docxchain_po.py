@@ -77,7 +77,7 @@ class DocxChain_PO():
             np.ndarray: The cropped image without the footer.
             np.ndarray: The cropped footer.
         """
-        image = image[:2200, :, :]
+        image = image[95:2200, :, :]
         footer = image[2200:, :, :]
         return image, footer
 
