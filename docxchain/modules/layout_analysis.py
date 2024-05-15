@@ -35,8 +35,7 @@ class LayoutAnalysis(object):
             }
 
             # load map information
-            print(os.listdir("./"))
-            map_info = json.load(open("docxchain/DocumentUnderstanding/DocXLayout/map_info.json"))
+            map_info = json.load(open("DocumentUnderstanding/DocXLayout/map_info.json"))
             category_map = {}
             for cate, idx in map_info["huntie"]["primary_map"].items():
                 category_map[idx] = cate
