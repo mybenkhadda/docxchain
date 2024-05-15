@@ -13,7 +13,7 @@ from models.utils import _sigmoid
 from utils.debugger import Debugger
 from utils.post_process import ctdet_post_process
 from utils.oracle_utils import gen_oracle_map
-from .base_trainer import BaseTrainer
+from base_trainer import BaseTrainer
 
 class CtdetLoss(torch.nn.Module):
   def __init__(self, opt):

@@ -7,10 +7,10 @@
 # LICENSE file in the root directory of this source tree.
 # --------------------------------------------------------------------------------
 
-from .config import add_vit_config
-from .VGTbackbone import build_VGT_fpn_backbone
-from .dataset_mapper import DetrDatasetMapper
-from .VGTTrainer import VGTTrainer
-from .VGT import VGT
+from config import add_vit_config
+from VGTbackbone import build_VGT_fpn_backbone
+from dataset_mapper import DetrDatasetMapper
+from VGTTrainer import VGTTrainer
+from VGT import VGT
 
-from .utils import eval_and_show, load_gt_from_json, pub_load_gt_from_json
+from utils import eval_and_show, load_gt_from_json, pub_load_gt_from_json

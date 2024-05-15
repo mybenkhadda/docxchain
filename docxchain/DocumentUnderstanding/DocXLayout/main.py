@@ -2,9 +2,9 @@ import os
 import cv2
 import random
 
-from ...opts import opts
-from .huntie_subfield import Huntie_Subfield
-from ...detectors.detector_factory import detector_factory
+from opts import opts
+from huntie_subfield import Huntie_Subfield
+from detectors.detector_factory import detector_factory
 import ipdb
 import numpy as np
 import logging
@@ -14,7 +14,7 @@ import sys
 import time
 import json
 
-from .wrapper import wrap_result
+from wrapper import wrap_result
 
 logger = logging.getLogger(__name__)
 time_stats = ['tot', 'load', 'pre', 'net', 'dec', 'post', 'merge']

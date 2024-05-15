@@ -8,7 +8,7 @@ import torch
 import torch.utils.model_zoo as model_zoo
 
 
-from .networks.dlav0_subfield import get_pose_net as get_dlav0_subfield
+from networks.dlav0_subfield import get_pose_net as get_dlav0_subfield
 
 _model_factory = {
     'dlav0subfield': get_dlav0_subfield,  # default DLAup

@@ -16,7 +16,7 @@ from utils.post_process import ctdet_post_process,ctdet_4ps_post_process,ctdet_4
 from utils.post_process import ctdet_corner_post_process
 from utils.debugger import Debugger
 
-from .base_detector import BaseDetector
+from base_detector import BaseDetector
 from PIL import Image
 
 from matplotlib import cm

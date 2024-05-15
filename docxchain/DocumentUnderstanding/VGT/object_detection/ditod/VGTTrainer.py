@@ -48,11 +48,11 @@ from detectron2.utils.logger import setup_logger
 from detectron2.engine import hooks
 from detectron2.engine.train_loop import AMPTrainer, SimpleTrainer, TrainerBase
 
-from .VGTcheckpointer import MyDetectionCheckpointer
+from VGTcheckpointer import MyDetectionCheckpointer
 from typing import Any, Dict, List, Set
 import itertools
 from detectron2.solver.build import maybe_add_gradient_clipping
-from .dataset_mapper import DetrDatasetMapper
+from dataset_mapper import DetrDatasetMapper
 from detectron2.evaluation import COCOEvaluator
 
 import pickle

@@ -15,7 +15,7 @@ from detectron2.utils.logger import log_first_n
 from detectron2.modeling.meta_arch.build import META_ARCH_REGISTRY
 from detectron2.modeling.meta_arch.rcnn import GeneralizedRCNN
 
-from .Wordnn_embedding import WordnnEmbedding
+from Wordnn_embedding import WordnnEmbedding
 
 __all__ = ["VGT"]
 

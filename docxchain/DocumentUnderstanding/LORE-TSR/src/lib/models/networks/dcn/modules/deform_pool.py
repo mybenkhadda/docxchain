@@ -1,6 +1,6 @@
 from torch import nn
 
-from ..functions.deform_pool import deform_roi_pooling
+from functions.deform_pool import deform_roi_pooling
 
 
 class DeformRoIPooling(nn.Module):

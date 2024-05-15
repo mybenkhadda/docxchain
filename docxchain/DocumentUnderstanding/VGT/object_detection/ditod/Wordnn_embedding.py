@@ -1,7 +1,7 @@
 import numpy as np
 import torch
 from torch import nn
-from .tokenization_bros import BrosTokenizer
+from tokenization_bros import BrosTokenizer
 
 def _init_weights(m):
     if isinstance(m, nn.Linear):

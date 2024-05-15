@@ -5,7 +5,7 @@ from __future__ import print_function
 import cv2
 import numpy as np
 
-from .ddd_utils import compute_box_3d, project_to_image, draw_box_3d
+from ddd_utils import compute_box_3d, project_to_image, draw_box_3d
 import pdb
 
 class Debugger(object):

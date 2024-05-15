@@ -6,11 +6,11 @@
 import sys
 import numpy as np
 
-from ..modules.layout_analysis import LayoutAnalysis
-from ..modules.text_detection import TextDetection
-from ..modules.text_recognition import TextRecognition
-from ..modules.table_structure_recognition import TableStructureRecognition
-from ..modules.formula_recognition import FormulaRecognition
+from modules.layout_analysis import LayoutAnalysis
+from modules.text_detection import TextDetection
+from modules.text_recognition import TextRecognition
+from modules.table_structure_recognition import TableStructureRecognition
+from modules.formula_recognition import FormulaRecognition
 
 class DocumentStructurization(object):
     """

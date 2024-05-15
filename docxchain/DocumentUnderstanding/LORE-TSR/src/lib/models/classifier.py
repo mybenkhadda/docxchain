@@ -5,13 +5,13 @@ from __future__ import print_function
 import numpy as np
 import torch
 import torch.nn as nn
-from .utils import _tranpose_and_gather_feat, _get_wh_feat, _get_4ps_feat, _normalized_ps
+from utils import _tranpose_and_gather_feat, _get_wh_feat, _get_4ps_feat, _normalized_ps
 import torch.nn.functional as F
 
 import json
 import cv2
 import os
-from .transformer import Transformer
+from transformer import Transformer
 import math
 import time
 import random

@@ -4,7 +4,7 @@ from __future__ import print_function
 
 import torch
 import torch.nn as nn
-from .utils import _gather_feat, _tranpose_and_gather_feat, _get_4ps_feat
+from utils import _gather_feat, _tranpose_and_gather_feat, _get_4ps_feat
 import numpy as np 
 import shapely
 import time

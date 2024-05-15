@@ -3,7 +3,7 @@ from __future__ import division
 from __future__ import print_function
 
 import numpy as np
-from .image import transform_preds, transform_preds_upper_left
+from image import transform_preds, transform_preds_upper_left
 
 
 def get_pred_depth(depth):

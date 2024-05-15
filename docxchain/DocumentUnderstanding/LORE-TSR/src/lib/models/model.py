@@ -7,13 +7,13 @@ import torch
 import torch.nn as nn
 import os
 
-from .networks.fpn_resnet import get_pose_net_fpn
-from .networks.fpn_resnet_half import get_pose_net_fpn_half
+from networks.fpn_resnet import get_pose_net_fpn
+from networks.fpn_resnet_half import get_pose_net_fpn_half
 
-from .networks.fpn_mask_resnet import get_pose_net_fpn_mask
-from .networks.fpn_mask_resnet_half import get_pose_net_fpn_mask_half
+from networks.fpn_mask_resnet import get_pose_net_fpn_mask
+from networks.fpn_mask_resnet_half import get_pose_net_fpn_mask_half
 
-from .networks.pose_dla_dcn import get_pose_net as get_dla_dcn 
+from networks.pose_dla_dcn import get_pose_net as get_dla_dcn 
 
 
 _model_factory = {

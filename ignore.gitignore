@@ -1,0 +1,4 @@
+.home/
+.docxchain/home/
+*.pth
+*.onnx

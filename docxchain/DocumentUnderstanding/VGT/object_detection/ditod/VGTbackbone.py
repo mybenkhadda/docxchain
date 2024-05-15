@@ -22,8 +22,8 @@ from detectron2.layers import (
 from detectron2.modeling import Backbone, BACKBONE_REGISTRY, FPN
 from detectron2.modeling.backbone.fpn import LastLevelP6P7, LastLevelMaxPool
 
-from .VGTbeit import beit_base_patch16, dit_base_patch16, dit_large_patch16, beit_large_patch16, VGT_dit_base_patch16
-from .FeatureMerge import FeatureMerge
+from VGTbeit import beit_base_patch16, dit_base_patch16, dit_large_patch16, beit_large_patch16, VGT_dit_base_patch16
+from FeatureMerge import FeatureMerge
 
 __all__ = [
     "build_VGT_fpn_backbone",

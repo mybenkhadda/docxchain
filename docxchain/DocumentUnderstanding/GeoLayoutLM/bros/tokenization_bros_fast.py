@@ -17,7 +17,7 @@
 from transformers.models.bert.tokenization_bert_fast import BertTokenizerFast
 from transformers.utils import logging
 
-from .tokenization_bros import BrosTokenizer
+from tokenization_bros import BrosTokenizer
 
 logger = logging.get_logger(__name__)
 

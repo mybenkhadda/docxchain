@@ -12,8 +12,8 @@ import pytz
 import json
 import pandas as pd
 import matplotlib.pyplot as plt
-from .pipelines.document_structurization import DocumentStructurization
-from .utilities.visualization import *
+from pipelines.document_structurization import DocumentStructurization
+from utilities.visualization import *
 
 class DocxChain_PO():
     def __init__(self):
@@ -22,7 +22,7 @@ class DocxChain_PO():
 
         layout_analysis_configs = dict()
         layout_analysis_configs['from_modelscope_flag'] = False
-        layout_analysis_configs['model_path'] = 'docxchain/home/DocXLayout_231012.pth'  # note that: currently the layout analysis model is NOT from modelscope
+        layout_analysis_configs['model_path'] = 'home/DocXLayout_231012.pth'  # note that: currently the layout analysis model is NOT from modelscope
         self.configs['layout_analysis_configs'] = layout_analysis_configs
 
         text_detection_configs = dict()
@@ -37,10 +37,10 @@ class DocxChain_PO():
 
         formula_recognition_configs = dict()
         formula_recognition_configs['from_modelscope_flag'] = False
-        formula_recognition_configs['image_resizer_path'] = 'docxchain/home/LaTeX-OCR_image_resizer.onnx'
-        formula_recognition_configs['encoder_path'] = 'docxchain/home/LaTeX-OCR_encoder.onnx'
-        formula_recognition_configs['decoder_path'] = 'docxchain/home/LaTeX-OCR_decoder.onnx'
-        formula_recognition_configs['tokenizer_json'] = 'docxchain/home/LaTeX-OCR_tokenizer.json'
+        formula_recognition_configs['image_resizer_path'] = 'home/LaTeX-OCR_image_resizer.onnx'
+        formula_recognition_configs['encoder_path'] = 'home/LaTeX-OCR_encoder.onnx'
+        formula_recognition_configs['decoder_path'] = 'home/LaTeX-OCR_decoder.onnx'
+        formula_recognition_configs['tokenizer_json'] = 'home/LaTeX-OCR_tokenizer.json'
         self.configs['formula_recognition_configs'] = formula_recognition_configs
         random.seed(1)
         self.document_structurizer = DocumentStructurization(self.configs)
@@ -237,10 +237,3 @@ class DocxChain_PO():
             img = images[page]
             img = img[int(region[1])-30:int(region[-1])+30, :,:]
             plt.imsave(f"tables/table-{random.randint(0,100)}-page{tables.iloc[i]['page']}.jpg", img)
-
-
-        
-
-        
-
-

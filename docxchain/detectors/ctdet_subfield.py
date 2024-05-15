@@ -8,13 +8,13 @@ import sys
 import numpy as np
 import torch
 # from external.nms import soft_nms
-from ..external.shapelyNMS import pnms
-from ..models.decode import ctdet_4ps_decode, ctdet_cls_decode
-from ..models.utils import flip_tensor
+from external.shapelyNMS import pnms
+from models.decode import ctdet_4ps_decode, ctdet_cls_decode
+from models.utils import flip_tensor
 
 BASE_DIR = os.path.dirname(__file__)
 sys.path.append(BASE_DIR + '/../utils')
-from ..post_process import ctdet_4ps_post_process
+from post_process import ctdet_4ps_post_process
 
 from .base_detector_subfield import BaseDetector
 import pdb

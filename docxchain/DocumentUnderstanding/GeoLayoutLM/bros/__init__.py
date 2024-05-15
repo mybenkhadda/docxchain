@@ -37,14 +37,14 @@ if is_torch_available():
     ]
 
 if TYPE_CHECKING:
-    from .configuration_bros import BROS_PRETRAINED_CONFIG_ARCHIVE_MAP, BrosConfig
-    from .tokenization_bros import BrosTokenizer
+    from configuration_bros import BROS_PRETRAINED_CONFIG_ARCHIVE_MAP, BrosConfig
+    from tokenization_bros import BrosTokenizer
 
     if is_tokenizers_available():
-        from .tokenization_bros_fast import BrosTokenizerFast
+        from tokenization_bros_fast import BrosTokenizerFast
 
     if is_torch_available():
-        from .modeling_bros import (
+        from modeling_bros import (
             BROS_PRETRAINED_MODEL_ARCHIVE_LIST,
             BrosForMaskedLM,
             BrosForPreTraining,
@@ -55,7 +55,7 @@ if TYPE_CHECKING:
             BrosPreTrainedModel,
         )
 
-        from .modeling_bros_convnext import(
+        from modeling_bros_convnext import(
             GeoLayoutLMModel,
             PairGeometricHead,
             MultiPairsGeometricHead,

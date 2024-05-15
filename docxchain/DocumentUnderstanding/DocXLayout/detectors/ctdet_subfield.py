@@ -16,7 +16,7 @@ BASE_DIR = os.path.dirname(__file__)
 sys.path.append(BASE_DIR + '/../utils')
 from post_process import ctdet_4ps_post_process
 
-from .base_detector_subfield import BaseDetector
+from base_detector_subfield import BaseDetector
 import pdb
 
 class CtdetDetector_Subfield(BaseDetector):

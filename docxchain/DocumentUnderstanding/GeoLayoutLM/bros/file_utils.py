@@ -27,7 +27,7 @@ from collections import OrderedDict
 from typing import Any, BinaryIO, Dict, List, Optional, Tuple, Union
 from dataclasses import fields
 
-# from . import __version__
+# from  import __version__
 __version__ = "2.9.0"
 
 

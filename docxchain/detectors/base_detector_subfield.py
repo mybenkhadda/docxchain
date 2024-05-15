@@ -9,12 +9,12 @@ import time
 import cv2
 import numpy as np
 import torch
-from ..models.model import create_model, load_model, save_model
+from models.model import create_model, load_model, save_model
 
 BASE_DIR = os.path.dirname(__file__)
 sys.path.append(BASE_DIR + '/../utils')
-from ..debugger import Debugger
-from ..image import get_affine_transform
+from debugger import Debugger
+from image import get_affine_transform
 
 
 class BaseDetector(object):
