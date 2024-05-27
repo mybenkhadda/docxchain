@@ -238,7 +238,7 @@ class DocxChain_PO():
             region = tables.iloc[i]["region"]
             page = int(tables.iloc[i]["page"])
             img = images[page]
-            img = img[int(region[1])-30:int(region[-1])+30, :,:]
+            img = img[int(region[1])-5:int(region[-1])+5, :,:]
 
             data = pytesseract.image_to_data(
                         img, 
