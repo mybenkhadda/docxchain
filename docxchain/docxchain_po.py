@@ -12,6 +12,7 @@ import pytz
 import json
 import pandas as pd
 import matplotlib.pyplot as plt
+import pytesseract
 from pipelines.document_structurization import DocumentStructurization
 from utilities.visualization import *
 
@@ -42,6 +43,7 @@ class DocxChain_PO():
         formula_recognition_configs['decoder_path'] = 'home/LaTeX-OCR_decoder.onnx'
         formula_recognition_configs['tokenizer_json'] = 'home/LaTeX-OCR_tokenizer.json'
         self.configs['formula_recognition_configs'] = formula_recognition_configs
+        os.environ['TESSDATA_PREFIX'] = 'home/tessdata-main/'
         random.seed(1)
         self.document_structurizer = DocumentStructurization(self.configs)
 
@@ -231,9 +233,19 @@ class DocxChain_PO():
         """
         images = self.pdf2image(pdf)
         tables = df[df["category_name"] == "table"]
+        l = []
         for i in range(tables.shape[0]):
             region = tables.iloc[i]["region"]
             page = int(tables.iloc[i]["page"])
             img = images[page]
             img = img[int(region[1])-30:int(region[-1])+30, :,:]
+
+            data = pytesseract.image_to_data(
+                        img, 
+                        lang="eng+fra",
+                        output_type='data.frame', 
+                        config='--psm 12 --oem 1')
+            
+            l.append(data)
             plt.imsave(f"tables/table-{random.randint(0,100)}-page{page}.jpg", img)
+            return l
