@@ -237,6 +237,7 @@ class DocxChain_PO():
         for i in range(tables.shape[0]):
             region = tables.iloc[i]["region"]
             page = int(tables.iloc[i]["page"])
+            print(region, page, page)
             img = images[page]
             img = img[int(region[1])-0:int(region[-1])+0, :,:]
 
