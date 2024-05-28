@@ -238,7 +238,7 @@ class DocxChain_PO():
             region = tables.iloc[i]["region"]
             page = int(tables.iloc[i]["page"])
             img = images[page]
-            img = img[int(region[1])-5:int(region[-1])+5, :,:]
+            img = img[int(region[1])-0:int(region[-1])+0, :,:]
 
             # data = pytesseract.image_to_data(
             #             img, 
@@ -247,5 +247,5 @@ class DocxChain_PO():
             #             config='--psm 12 --oem 1')
             
             # l.append(data)
-            plt.imsave(f"tables/table-{random.randint(0,100)}-page{page}.jpg", img)
+            plt.imsave(f"tables/table-{region}-page{page}.jpg", img)
             return l
