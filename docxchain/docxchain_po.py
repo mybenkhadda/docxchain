@@ -247,6 +247,7 @@ class DocxChain_PO():
             #             config='--psm 12 --oem 1')
             
             # l.append(data)
-            print(f"tables/table-{region}-page{page}.jpg")
             plt.imsave(f"tables/table-{region}-page{page}.jpg", img)
-            return l
+            plt.imshow(img)
+            plt.show()
+        return l
