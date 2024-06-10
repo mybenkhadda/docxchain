@@ -220,35 +220,36 @@ class DocxChain_PO():
                 )
         return pd.DataFrame(data, columns = data[0].keys())
     
-    def extractTables(self, pdf, df):
-        """
-        This function takes a PDF file and a pandas dataframe as input, and extracts all the tables from the PDF and saves them as images in the "tables" directory.
+    def extractTables_(self, pdf, df):
+            """
+            This function takes a PDF file and a pandas dataframe as input, and extracts all the tables from the PDF and saves them as images in the "tables" directory.
 
-        Args:
-            pdf (str): The path to the PDF file.
-            df (pd.DataFrame): A pandas dataframe containing the output of the layout analysis pipeline.
+            Args:
+                pdf (str): The path to the PDF file.
+                df (pd.DataFrame): A pandas dataframe containing the output of the layout analysis pipeline.
 
-        Returns:
-            None: This function does not return any additional values.
-        """
-        images = self.pdf2image(pdf)
-        tables = df[df["category_name"] == "table"]
-        l = []
-        for i in range(tables.shape[0]):
-            region = tables.iloc[i]["region"]
-            page = int(tables.iloc[i]["page"])
-            print(region, page)
-            img = images[page]
-            img = img[int(region[1])-5:int(region[2])+5, :,:]
+            Returns:
+                None: This function does not return any additional values.
+            """
+            images = self.pdf2image(pdf)
+            print(images[0].shape)
+            tables = df[df["category_name"] == "table"]
+            l = []
+            for i in range(tables.shape[0]):
+                region = tables.iloc[i]["region"]
+                page = int(tables.iloc[i]["page"])
+                print(tables.iloc[i]["content"])
+                img = images[page]
+                img = img[int(region[1])+100-20:int(region[-1])+100+20, :,:]
 
-            data = pytesseract.image_to_data(
-                        img, 
-                        lang="eng+fra",
-                        output_type='data.frame', 
-                        config='--psm 12 --oem 1')
-            
-            l.append(data)
-            plt.imsave(f"tables/table-{region}-page{page}.jpg", img)
-            plt.imshow(img)
-            plt.show()
-        return l
+                data = pytesseract.image_to_data(
+                            img, 
+                            lang="eng+fra",
+                            output_type='data.frame', 
+                            config='--psm 12 --oem 1')
+                
+                l.append(data)
+                plt.imsave(f"tables/table-{region}-page{page}.jpg", img)
+                plt.imshow(img)
+                plt.show()
+            return l
