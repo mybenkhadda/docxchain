@@ -220,7 +220,7 @@ class DocxChain_PO():
                 )
         return pd.DataFrame(data, columns = data[0].keys())
     
-    def extractTables_(self, pdf, df):
+    def extractTables(self, pdf, df):
             """
             This function takes a PDF file and a pandas dataframe as input, and extracts all the tables from the PDF and saves them as images in the "tables" directory.
 
